@@ -79,10 +79,10 @@ const mysql = require('mysql');
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: 'localhost',    
-  user: 'root',         
-  password: '',         
-  database: 'employee_management'
+  host:    mysql.railway.internal  ,    ///'localhost',    
+  user:     root     ,                      //'root',         
+  password:  JrGHEbexYtWgVjbIzzzAHElCkwqZTbvV,                        //'',         
+  database:     railway,                       //'employee_management'
 });
 
 // Connect to the database
