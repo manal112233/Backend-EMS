@@ -4,6 +4,8 @@ const passport=require("passport");
 const LocalStrategy=require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
+//require('dotenv').config();
+
 
 
 const port = process.env.PORT || 8080;
@@ -79,10 +81,11 @@ const mysql = require('mysql');
 
 // MySQL connection
 const db = mysql.createConnection({
-  host:    mysql.railway.internal  ,    ///'localhost',    
-  user:     root     ,                      //'root',         
-  password:  JrGHEbexYtWgVjbIzzzAHElCkwqZTbvV,                        //'',         
-  database:     railway,                       //'employee_management'
+    host: 'localhost' ,       //process.env.MYSQL_HOST || 'localhost',   // Fallback to 'localhost' if not set
+    user:  'root' ,      //process.env.MYSQL_USER || 'root',        // Fallback to 'root' if not set
+    password: '' ,         //process.env.MYSQL_PASSWORD || '',    // Fallback to an empty string if not set
+    database: 'employee_management',      //process.env.MYSQL_DATABASE || 'test' ,
+   // port: process.env.MYSQL_PORT || 3306                      //'employee_management'
 });
 
 // Connect to the database
